@@ -43,4 +43,22 @@ _By considering the terms in the Fibonacci sequence whose values do not exceed f
 
 Using dynamic programming style, for calculating fibonacci terms, recursive strategy will be straightforward but run slow ( and no doubt very expensive ). Starting with a slice of two elements `{1, 2}`, we'll keep calculating next fibonacci term until most recently computed term crosses _4,000,000_. And in each iteration, it'll check whether this term is even or not. If even, we'll add it up to _sum_ variable, which is initialized with _2_ ( because at very beginning _fibArr_, was only holding _2_ as even number )
 
+### [problem 3](./projecteuler/problem3.go)
+
+#### statement
+
+_The prime factors of 13195 are 5, 7, 13 and 29._
+
+_What is the largest prime factor of the number 600851475143 ?_
+
+#### solution
+
+6857
+
+#### explanation
+
+First calculates square root of given number, and find out all primes which are under or equals to that sqrt value. Now we'll simply iterate over that prime holder slice, from last to first, i.e. from higher value prime to lower value prime, cause finally, we need to find out maximum prime factor of _num_. That'll allow us to perform lesser number of checkings.
+
+Generation of primes under _X_, is done using dynamic programming strategy, by updating a slice holding primes, on runtime. Because we know any composite number must have prime factor, lesser than square root of that number. So we'll perform check with prime numbers only, which will save a lot of computation too.
+
 **More coming soon ...** :wink:
