@@ -9,4 +9,5 @@ import (
 func main() {
 	fmt.Println("\n:: #ProjectEuler100 ::")
 	fmt.Printf("\n\tProblem 1 : %d\n", projecteuler.FindSumOfAllMultiplesOf3or5BelowX(1000))
+	fmt.Printf("\n\tProblem 2 : %d\n", projecteuler.GetSumOfEvenValuedFibonacciTermsUnderX(4000000))
 }
