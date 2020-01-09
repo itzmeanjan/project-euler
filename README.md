@@ -19,7 +19,7 @@ _Find the sum of all the multiples of 3 or 5 below 1000._
 
 #### solution
 
-233168
+233168 in 7.325µs
 
 #### explanation
 
@@ -37,7 +37,7 @@ _By considering the terms in the Fibonacci sequence whose values do not exceed f
 
 #### solution
 
-4613732
+4613732 in 2.752µs
 
 #### explanation
 
@@ -53,12 +53,28 @@ _What is the largest prime factor of the number 600851475143 ?_
 
 #### solution
 
-6857
+6857 in 171.188338ms
 
 #### explanation
 
 First calculates square root of given number, and find out all primes which are under or equals to that sqrt value. Now we'll simply iterate over that prime holder slice, from last to first, i.e. from higher value prime to lower value prime, cause finally, we need to find out maximum prime factor of _num_. That'll allow us to perform lesser number of checkings.
 
 Generation of primes under _X_, is done using dynamic programming strategy, by updating a slice holding primes, on runtime. Because we know any composite number must have prime factor, lesser than square root of that number. So we'll perform check with prime numbers only, which will save a lot of computation too.
+
+### [problem 4](./projecteuler/problem4.go)
+
+#### statement
+
+_A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99._
+
+_Find the largest palindrome made from the product of two 3-digit numbers._
+
+#### solution
+
+906609 in 172.4µs
+
+#### explanation
+
+I'll start from end i.e. for finding largest possible palindrome number under _1000_, I'll start checking from _999_ & keep multiplying two numbers _( < 1000 )_, until I reach _1_. But that'll be brute-force, which is why I'd prefer breaking out of current iteration, as soon as current product _( product in this iteration )_ goes below `largestPalim` _( which is largest palindrome computed upto this point )_.
 
 **More coming soon ...** :wink:
