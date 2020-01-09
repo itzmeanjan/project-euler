@@ -75,6 +75,42 @@ _Find the largest palindrome made from the product of two 3-digit numbers._
 
 #### explanation
 
-I'll start from end i.e. for finding largest possible palindrome number under _1000_, I'll start checking from _999_ & keep multiplying two numbers _( < 1000 )_, until I reach _1_. But that'll be brute-force, which is why I'd prefer breaking out of current iteration, as soon as current product _( product in this iteration )_ goes below `largestPalim` _( which is largest palindrome computed upto this point )_.
+We'll start from end i.e. for finding largest possible palindrome number under _1000_, we'll start checking from _999_ & keep multiplying two numbers _( < 1000 )_, until I reach _1_. But that'll be brute-force, which is why we'd prefer breaking out of current iteration, as soon as current product _( product in this iteration )_ goes below `largestPalim` _( which is largest palindrome computed upto this point )_.
+
+### [problem 5](./projecteuler/problem5.go)
+
+#### statement
+
+_2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder._
+
+_What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?_
+
+#### solution
+
+232792560 in 1.664408611s
+
+#### explanation
+
+We'll start finding smallest number divisible by all numbers from _1_ to _20_, at 10, because for any number to be divisible by _10_, it must end with round figure. And keep incrementing number under lens by _10_ ( after each iteration ), which will eventually reduce #-of computational steps required for finding result.
+
+### [problem 6](./projecteuler/problem6.go)
+
+#### statement
+
+_The sum of the squares of the first ten natural numbers is, 12 + 22 + ... + 102 = 385_
+
+_The square of the sum of the first ten natural numbers is,(1 + 2 + ... + 10)2 = 552 = 3025_
+
+_Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640._
+
+_Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum._
+
+#### solution
+
+25164150 in 275ns
+
+#### explanation
+
+We'll calculate square of sum of {1..100} ( used _n*(n+1)/2_, for finding sum of first _n_ natural numbers ) & square of each natural number {1..100}, while accumulating them up in a single variable. Finally a simple absolute substraction of those two, will get us desired result.
 
 **More coming soon ...** :wink:

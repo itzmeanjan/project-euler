@@ -17,5 +17,9 @@ func main() {
 	fmt.Printf("\n\tProblem 3 : %d in %v\n", projecteuler.GetLargestPrimeFactor(600851475143), time.Now().Sub(start))
 	start = time.Now()
 	fmt.Printf("\n\tProblem 4 : %d in %v\n", projecteuler.GetLargestPalindrome(1000), time.Now().Sub(start))
+	start = time.Now()
+	fmt.Printf("\n\tProblem 5 : %d in %v\n", projecteuler.GetSmallestMultiple(), time.Now().Sub(start))
+	start = time.Now()
+	fmt.Printf("\n\tProblem 6 : %d in %v\n", projecteuler.SumSquareDiff(100), time.Now().Sub(start))
 	fmt.Println("Done")
 }
