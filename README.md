@@ -113,4 +113,20 @@ _Find the difference between the sum of the squares of the first one hundred nat
 
 We'll calculate square of sum of {1..100} ( used _n*(n+1)/2_, for finding sum of first _n_ natural numbers ) & square of each natural number {1..100}, while accumulating them up in a single variable. Finally a simple absolute substraction of those two, will get us desired result.
 
+### [problem 7](./projecteuler/problem7.go)
+
+#### statement
+
+_By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13._
+
+_What is the 10,001st prime number?_
+
+#### solution
+
+104743 in 14.523821ms
+
+#### explanation
+
+We'll buffer all primes calculated uptil now, and check a certain odd number's _( for reducing number of steps, we're skipping even numbers, cause they are definitely composite )_ divisibility using primes _( buffered )_ under square root of `num`. Finally we return _(x-1)_ indexed term from buffer.
+
 **More coming soon ...** :wink:
