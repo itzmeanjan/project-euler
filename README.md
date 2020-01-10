@@ -166,4 +166,25 @@ _Find the thirteen adjacent digits in the 1000-digit number that have the greate
 
 Given a _1000_ digit number _( as a string )_, we'll iterate over all indices of this string _( from 0 to 999 )_, so that we can consider all possible consequtive substrings of fixed length. Then we keep multiplying all digits present in each sub-sequence and take max of it. That'll satisfy our need, but multiplication of digits in subsequences is overlapping problem. So, we won't recompute, but use previous iterations cached value _( with care )_, if and only if it's not initial iteration & first digit of previous subsequence isn't _0_.
 
+### [problem 9](./projecteuler/problem9.go)
+
+#### statement
+
+_A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,_
+_a^2 + b^2 = c^2_
+
+_For example, 32 + 42 = 9 + 16 = 25 = 52._
+
+_There exists exactly one Pythagorean triplet for which a + b + c = 1000._
+_Find the product abc._
+
+#### solution
+
+31875000 in 145.78477ms
+
+#### explanation
+
+We start iterating from c=999 ( outer loop ), b=998 ( mid loop ), a=997 ( inner most loop ), satisfying a < b < c always. Now we need to check whther a+b+c == 1000, if it's lesser than so, breaking out of loop, avoiding unnecessary computations. If previous condition and pythagorean triplet condition is met, we calculate product of a, b, c, which is our desired result.
+
+
 **More coming soon ...** :wink:

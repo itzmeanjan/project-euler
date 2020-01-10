@@ -25,5 +25,7 @@ func main() {
 	fmt.Printf("\n\tProblem 7 : %d in %v\n", projecteuler.GetXthPrime(10001), time.Now().Sub(start))
 	start = time.Now()
 	fmt.Printf("\n\tProblem 8 : %d in %v\n", projecteuler.LargestProductInSeries(13), time.Now().Sub(start))
+	start = time.Now()
+	fmt.Printf("\n\tProblem 9 : %d in %v\n", projecteuler.SpecialPythagoreanTriplet(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
