@@ -129,4 +129,41 @@ _What is the 10,001st prime number?_
 
 We'll buffer all primes calculated uptil now, and check a certain odd number's _( for reducing number of steps, we're skipping even numbers, cause they are definitely composite )_ divisibility using primes _( buffered )_ under square root of `num`. Finally we return _(x-1)_ indexed term from buffer.
 
+### [problem 8](./projecteuler/problem8.go)
+
+#### statement
+
+_The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832._
+
+_73167176531330624919225119674426574742355349194934_
+_96983520312774506326239578318016984801869478851843_
+_85861560789112949495459501737958331952853208805511_
+_12540698747158523863050715693290963295227443043557_
+_66896648950445244523161731856403098711121722383113_
+_62229893423380308135336276614282806444486645238749_
+_30358907296290491560440772390713810515859307960866_
+_70172427121883998797908792274921901699720888093776_
+_65727333001053367881220235421809751254540594752243_
+_52584907711670556013604839586446706324415722155397_
+_53697817977846174064955149290862569321978468622482_
+_83972241375657056057490261407972968652414535100474_
+_82166370484403199890008895243450658541227588666881_
+_16427171479924442928230863465674813919123162824586_
+_17866458359124566529476545682848912883142607690042_
+_24219022671055626321111109370544217506941658960408_
+_07198403850962455444362981230987879927244284909188_
+_84580156166097919133875499200524063689912560717606_
+_05886116467109405077541002256983155200055935729725_
+_71636269561882670428252483600823257530420752963450_
+
+_Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?_
+
+#### solution
+
+23514624000 in 36.693µs
+
+#### explanation
+
+Given a _1000_ digit number _( as a string )_, we'll iterate over all indices of this string _( from 0 to 999 )_, so that we can consider all possible consequtive substrings of fixed length. Then we keep multiplying all digits present in each sub-sequence and take max of it. That'll satisfy our need, but multiplication of digits in subsequences is overlapping problem. So, we won't recompute, but use previous iterations cached value _( with care )_, if and only if it's not initial iteration & first digit of previous subsequence isn't _0_.
+
 **More coming soon ...** :wink:
