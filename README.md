@@ -184,7 +184,22 @@ _Find the product abc._
 
 #### explanation
 
-We start iterating from c=999 ( outer loop ), b=998 ( mid loop ), a=997 ( inner most loop ), satisfying a < b < c always. Now we need to check whther a+b+c == 1000, if it's lesser than so, breaking out of loop, avoiding unnecessary computations. If previous condition and pythagorean triplet condition is met, we calculate product of a, b, c, which is our desired result.
+We start iterating from c=999 ( outer loop ), b=998 ( mid loop ), a=997 ( inner most loop ), satisfying a < b < c always. Now we need to check whether a+b+c == 1000 or not, if it's lesser than so, we need to break out of loop, avoiding unnecessary computation. If previous condition and Pythagorean Triplet condition is met, we calculate product of a, b, c, which is our desired result.
 
+### [problem 10](./projecteuler/problem10.go)
+
+#### statement
+
+_The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17._
+
+_Find the sum of all the primes below two million._
+
+#### solution
+
+142913828922 in 585.534206ms
+
+#### explanation
+
+First we'll start generating all primes under given number _X_, and then simply summing them up, will get us our desired result. For generating primes, we're going to make use of one method _( GeneratePrimesUnderX )_ written during solving _Problem 3_.
 
 **More coming soon ...** :wink:
