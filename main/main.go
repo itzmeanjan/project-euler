@@ -29,5 +29,7 @@ func main() {
 	fmt.Printf("\n\tProblem 9 : %d in %v\n", projecteuler.SpecialPythagoreanTriplet(), time.Now().Sub(start))
 	start = time.Now()
 	fmt.Printf("\n\tProblem 10 : %d in %v\n", projecteuler.SumOfPrimes(2000000), time.Now().Sub(start))
+	start = time.Now()
+	fmt.Printf("\n\tProblem 12 : %d in %v\n", projecteuler.HighlyDivisibleTriangularNumber(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
