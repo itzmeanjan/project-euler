@@ -22,8 +22,58 @@ var arr [][]int = [][]int{
 	{20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54},
 	{1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48}}
 
+// first explore neighbours, from a given index with in GRID
+//
+// there'll be at most 8 possible neighbor sequence, i.e.
+// 1 > left
+// 2 > right
+// 3 > top
+// 4 > down
+// 5 > top-left
+// 6 > top-right
+// 7 > bottom-left
+// 8 > bottom-right
+//
+// now along these directions, we'll pick up specified number of elements from
+// GRID, given that there does exist some element in certain index
+// ( otherwise program will panic, due to out of index error )
+//
+// A 2D array of those neighbors to be returned
 func exploreNeighbors(i int, j int, count int, sizeR int, sizeC int) [][]int {
 	neighbors := [][]int{}
+	// along top
+	if i-count+1 >= 0 {
+		tmp := []int{}
+		for x := i; x > i-count; x-- {
+			tmp = append(tmp, arr[x][j])
+		}
+		neighbors = append(neighbors, tmp)
+	}
+	// along down
+	if i+count-1 < sizeR {
+		tmp := []int{}
+		for x := i; x < i+count; x++ {
+			tmp = append(tmp, arr[x][j])
+		}
+		neighbors = append(neighbors, tmp)
+	}
+	// along left
+	if j-count+1 >= 0 {
+		tmp := []int{}
+		for x := j; x > j-count; x-- {
+			tmp = append(tmp, arr[i][x])
+		}
+		neighbors = append(neighbors, tmp)
+	}
+	// along right
+	if j+count-1 < sizeC {
+		tmp := []int{}
+		for x := j; x < j+count; x++ {
+			tmp = append(tmp, arr[i][x])
+		}
+		neighbors = append(neighbors, tmp)
+	}
+	// along bottom-right
 	if i+count-1 < sizeR && j+count-1 < sizeC {
 		tmp := []int{}
 		for x, y := i, j; x < i+count && y < j+count; {
@@ -33,19 +83,67 @@ func exploreNeighbors(i int, j int, count int, sizeR int, sizeC int) [][]int {
 		}
 		neighbors = append(neighbors, tmp)
 	}
-	if i+count-1 < sizeR {
+	// along top-left
+	if i-count+1 >= 0 && j-count+1 >= 0 {
 		tmp := []int{}
-		for x := i; x < i+count; x++ {
-			tmp = append(tmp, arr[x][j])
+		for x, y := i, j; x > i-count && y > j-count; {
+			tmp = append(tmp, arr[x][y])
+			x--
+			y--
 		}
 		neighbors = append(neighbors, tmp)
 	}
-	if j+count-1 < sizeC {
+	// along bottom-left
+	if i+count-1 < sizeR && j-count+1 >= 0 {
 		tmp := []int{}
-		for x := j; x < j+count; x++ {
-			tmp = append(tmp, arr[i][x])
+		for x, y := i, j; x < i+count && y > j-count; {
+			tmp = append(tmp, arr[x][y])
+			x++
+			y--
+		}
+		neighbors = append(neighbors, tmp)
+	}
+	// along top-right
+	if i-count+1 >= 0 && j+count-1 < sizeC {
+		tmp := []int{}
+		for x, y := i, j; x > i-count && y < j+count; {
+			tmp = append(tmp, arr[x][y])
+			x--
+			y++
 		}
 		neighbors = append(neighbors, tmp)
 	}
 	return neighbors
+}
+
+// given that, we've already retrieved all neighbors for a certain
+// index in GRID, we need to now calculate max product ( of elements ) from these sequences
+// i.e. which inner array produces max product, among all arrays present in outer array
+func getMaxProdFromNeighbors(neighbors [][]int) int {
+	maxProd := 0
+	for i := 0; i < len(neighbors); i++ {
+		prod := 1
+		for _, j := range neighbors[i] {
+			prod *= j
+		}
+		if prod > maxProd {
+			maxProd = prod
+		}
+	}
+	return maxProd
+}
+
+// LargestProductInGrid - Finds largest product, found by multiplying
+// element sequences, along any of these directions left, right, up, down or diagonally
+// i.e. possible 8 directions ( at max from any index in GRID )
+func LargestProductInGrid() int {
+	maxProd := 0
+	for i := 0; i < len(arr); i++ {
+		for j := 0; j < len(arr[i]); j++ {
+			if tmp := getMaxProdFromNeighbors(exploreNeighbors(i, j, 4, 20, 20)); tmp > maxProd {
+				maxProd = tmp
+			}
+		}
+	}
+	return maxProd
 }

@@ -30,6 +30,10 @@ func main() {
 	start = time.Now()
 	fmt.Printf("\n\tProblem 10 : %d in %v\n", projecteuler.SumOfPrimes(2000000), time.Now().Sub(start))
 	start = time.Now()
+	fmt.Printf("\n\tProblem 11 : %d in %v\n", projecteuler.LargestProductInGrid(), time.Now().Sub(start))
+	start = time.Now()
 	fmt.Printf("\n\tProblem 12 : %d in %v\n", projecteuler.HighlyDivisibleTriangularNumber(), time.Now().Sub(start))
+	start = time.Now()
+	fmt.Printf("\n\tProblem 13 : %s in %v\n", projecteuler.LargeSum(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

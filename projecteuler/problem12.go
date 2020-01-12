@@ -1,9 +1,6 @@
 package projecteuler
 
-import (
-	"fmt"
-	"sync"
-)
+import "sync"
 
 // GetXthTriangularNumber - Returns triangular number at given position `x`
 func GetXthTriangularNumber(x int) int {
@@ -30,6 +27,15 @@ type TriangularNumber struct {
 	factorC int
 }
 
+// this function tries to find out maximum triangular number
+// with in a given range ( i.e. denotes position of triangular numbers )
+//
+// we're also having two communication channels, which will help us
+// in sending back computed value & checking whether to abort computation or not, respectively
+//
+// `maxFactorC` - denotes maximum count of factors, from all triangular numbers of this given range ( by position of triangular number )
+// `channel` - used to send computed result back to listener
+// `channelEnd` - used for monitoring whether this goroutine is asked to abort its computation immediately or not
 func getHighlyDivisibleTriNumFromRange(init int, end int, maxFactorC int, channel chan TriangularNumber, channelEnd chan bool) {
 	triNum := TriangularNumber{1, 1}
 	for i := init; i <= end; i++ {
@@ -47,19 +53,23 @@ func getHighlyDivisibleTriNumFromRange(init int, end int, maxFactorC int, channe
 			}
 		}
 	}
+	// pushing value ( triangular number with maximum number of factors, from given range ) via channel
 	channel <- triNum
 	if triNum.factorC >= maxFactorC {
-		close(channel)
+		close(channel) // if found desired value, we go for closing this channel, to let listener know, there's nothing more to read
 	}
 }
 
-// HighlyDivisibleTriangularNumber - ...
+// HighlyDivisibleTriangularNumber - Finds out first triangular number, which has
+// factors >=500
 func HighlyDivisibleTriangularNumber() int {
 	triNum := TriangularNumber{1, 1}
 	channel := make(chan TriangularNumber, 2)
 	channelEnd := make(chan bool)
 	startAt := 1
-	workerC := 4
+	const workerC = 4
+	// this anonymous function is designed to create requested number of
+	// goroutines, by invoking a certain function, with varied arguments
 	createWorkers := func(startAt *int, incrBy int, c int) {
 		for i := 0; i < c; i++ {
 			go getHighlyDivisibleTriNumFromRange(*startAt, *startAt+incrBy-1, 500, channel, channelEnd)
@@ -68,24 +78,28 @@ func HighlyDivisibleTriangularNumber() int {
 	}
 	var wg sync.WaitGroup
 	wg.Add(1)
+	// anonymous function, keeps track of computed values, from completed goroutines,
+	// if not reached expected value, can create more goroutines, for perfroming next stage
+	// of computation
 	go func() {
-		respC := 1
+		defer wg.Done()
+		respC := 0 // keeps track how many worker has completed, upto this point
 		for v := range channel {
 			if v.factorC > triNum.factorC {
 				triNum = v
 			}
-			fmt.Println(v)
 			if triNum.factorC >= 500 {
 				channelEnd <- true
-				wg.Done()
+				break
 			}
 			respC++
 			if respC%workerC == 0 {
-				createWorkers(&startAt, 250, workerC)
+				createWorkers(&startAt, 500, workerC)
 			}
 		}
 	}()
+	// initially creating specified number of goroutines, later on, if needed, we may request more workers ( for next stage of computation )
 	createWorkers(&startAt, 500, workerC)
-	wg.Wait()
+	wg.Wait() // blocking wait, until worker denotes work is completed
 	return triNum.num
 }
