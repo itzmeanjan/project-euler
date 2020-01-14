@@ -452,4 +452,20 @@ return 3*n + 1
 
 We need to keep computing until we reach 1 _( because it's thought that all collatz sequences end at 1 )_.
 
+### [problem 16](./projecteuler/problem16.go)
+
+#### statement
+
+_2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26._
+
+_What is the sum of the digits of the number 2^1000?_
+
+#### solution
+
+1366 in 20.087µs
+
+#### explanation
+
+Calculates sum of digits of _base ^ pow_, using `math/big` package of go standard library.
+
 **More coming soon ...** :wink:
