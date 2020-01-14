@@ -452,6 +452,24 @@ return 3*n + 1
 
 We need to keep computing until we reach 1 _( because it's thought that all collatz sequences end at 1 )_.
 
+### [problem 15](./projecteuler/problem15.go)
+
+#### statement
+
+_Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down, there are exactly 6 routes to the bottom right corner._
+
+_How many such routes are there through a 20×20 grid?_
+
+#### solution
+
+137846528820 in 22m41.809635403s
+
+#### explanation
+
+Recursively computes possible number of paths for reaching bottom-right cell, while starting at top-left cell (0, 0). We can think of it like we're splitting into two child _( at max )_ routes at every vertex, until we get to target vertex _(2, 2)_ for example case.
+
+![lattice_path](./lattice_path.jpg)
+
 ### [problem 16](./projecteuler/problem16.go)
 
 #### statement
