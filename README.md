@@ -462,13 +462,24 @@ _How many such routes are there through a 20×20 grid?_
 
 #### solution
 
-137846528820 in 22m41.809635403s
+137846528820 in 22m41.809635403s _( **using Recursion** )_
+
+137846528820 in 4.076µs _( **using Bottom-Up approach i.e. Dynamic Programming** )_
 
 #### explanation
 
 Recursively computes possible number of paths for reaching bottom-right cell, while starting at top-left cell (0, 0). We can think of it like we're splitting into two child _( at max )_ routes at every vertex, until we get to target vertex _(2, 2)_ for example case.
 
 ![lattice_path](./lattice_path.jpg)
+
+**Improvement** - We can probably understand this problem is having following two properties
+
+- Optimal Substructure
+- Overlapping Subproblems
+
+which are enough to indicate that this one can be solved using Dynamic Programming. So we're going to use a two dimentional array to store number of possible paths which can be taken from a certain index _(i, j)_, to reach bottom-right most index _(20, 20)_.
+
+![lattice_path_dp](./lattice_path_dp.jpg)
 
 ### [problem 16](./projecteuler/problem16.go)
 
