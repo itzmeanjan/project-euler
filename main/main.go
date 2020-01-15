@@ -43,6 +43,6 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 16 : %d in %v\n", projecteuler.PowerDigitSum(2, 1000), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 18 : %d in %v\n", projecteuler.MaxPathSum(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 18 : %d in %v\n", projecteuler.MaxPathSum(projecteuler.BuildTriangle()), time.Now().Sub(start))
 	fmt.Println("Done")
 }
