@@ -42,7 +42,9 @@ func main() {
 		fmt.Printf("\n\tProblem 15 : %d in %v\n", projecteuler.LatticePath(20, 20), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 16 : %d in %v\n", projecteuler.PowerDigitSum(2, 1000), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 18 : %d in %v\n", projecteuler.MaxPathSum(projecteuler.BuildTriangleI()), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 18 : %d in %v\n", projecteuler.MaxPathSum(projecteuler.BuildTriangleI()), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 19 : %d in %v\n", projecteuler.CountingSundays(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

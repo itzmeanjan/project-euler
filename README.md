@@ -572,4 +572,22 @@ We need to choose among _2^(n-1)_ = _2^3_ = _8_ paths from root to bottom level 
 
 Thus _**23**_ is max cost path, from top to bottom level. Algorithm's time and space complexity ∈ _0(n^2)_, where n = # of rows in triangle.
 
+### [problem 19](./projecteuler/problem19.go)
+
+#### statement
+
+_You are given the following information, but you may prefer to do some research for yourself._
+
+_1 Jan 1900 was a Monday. Thirty days has September, April, June and November. All the rest have thirty-one, Saving February alone, Which has twenty-eight, rain or shine. And on leap years, twenty-nine. A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400._
+
+_How many Sundays fell on the first of the month during the twentieth century (1 Jan 1901 to 31 Dec 2000)?_
+
+#### solution
+
+171 in 57.092µs
+
+#### explanation
+
+Starts iteration from _31/ 11/ 1899_, which was _Sunday_ ( given ), keeps calculating next _Sunday_, until we reach _01/ 01/ 2001_. In each iteration we need to check, whether current date is within _01/01/1901 - 31/12/2000_ && it's first day of month or not.
+
 **More coming soon ...** :wink:
