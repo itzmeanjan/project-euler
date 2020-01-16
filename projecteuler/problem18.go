@@ -50,9 +50,9 @@ func (t *Triangle) insertRows(elems [][]int) Triangle {
 	return *t
 }
 
-// BuildTriangle - builds Triangle from input data, and returns a Triangle
+// BuildTriangleI - builds Triangle from input data, and returns a Triangle
 // upon which we'll apply our algorithm, for finding max cost path from top to bottom level
-func BuildTriangle() Triangle {
+func BuildTriangleI() Triangle {
 	// [][]int{{3}, {7, 4}, {2, 4, 6}, {8, 5, 9, 3}}
 	data := [][]int{{75},
 		{95, 64},

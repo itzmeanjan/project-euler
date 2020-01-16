@@ -553,6 +553,19 @@ _NOTE: As there are only 16384 routes, it is possible to solve this problem by t
 
 #### explanation
 
+I'll use following triangle for explanatory purpose.
+
+```
+3
+
+7 4
+
+2 4 6
+
+8 5 9 3
+```
+We need to choose among _2^(n-1)_ = _2^3_ = _8_ paths from root to bottom level _( thinking of it as it's a binary tree )_. Bruteforce won't help for larger size triangle, so we'll start updating node value of level 1 by accumulating node value of previous level _( root level is kept unchanged )_, and continue this process. When we have multiple competiting values for a certain position, we'll choose max of it, cause our objective is to find max path value, running from top to bottom.
+
 ![max_path_sum_1](./max_path_sum_1.jpg)
 
 ![max_path_sum_2](./max_path_sum_2.jpg)
