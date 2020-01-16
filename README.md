@@ -553,6 +553,10 @@ _NOTE: As there are only 16384 routes, it is possible to solve this problem by t
 
 #### explanation
 
-![max_path_sum](./max_path_sum.jpg)
+![max_path_sum_1](./max_path_sum_1.jpg)
+
+![max_path_sum_2](./max_path_sum_2.jpg)
+
+Thus _**23**_ is max cost path, from top to bottom level. Algorithm's time and space complexity ∈ _0(n^2)_, where n = # of rows in triangle.
 
 **More coming soon ...** :wink:
