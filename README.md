@@ -590,4 +590,22 @@ _How many Sundays fell on the first of the month during the twentieth century (1
 
 Starts iteration from _31/ 11/ 1899_, which was _Sunday_ ( given ), keeps calculating next _Sunday_, until we reach _01/ 01/ 2001_. In each iteration we need to check, whether current date is within _01/01/1901 - 31/12/2000_ && it's first day of month or not.
 
+### [problem 20](./projecteuler/problem20.go)
+
+#### statement
+
+_n! means n × (n − 1) × ... × 3 × 2 × 1_
+
+_For example, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, and the sum of the digits in the number 10! is 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27._
+
+_Find the sum of the digits in the number 100!_
+
+#### solution
+
+648 in 25.651µs
+
+#### explanation
+
+First calculates factorial of any given number `n` as _big.Int_, after that we simply add digits up of that number, to get desired result.
+
 **More coming soon ...** :wink:
