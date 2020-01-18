@@ -627,4 +627,22 @@ _Evaluate the sum of all the amicable numbers under 10000._
 
 We start from 1 and go upto 9999, for checking whether that number is forming amicable pair or not. Using caching mechanism, will help us in halving number of checks to be performed.
 
+### [problem 22](./projecteuler/problem22.go)
+
+#### statement
+
+_Using [names.txt](p022_names.txt) (right click and 'Save Link/Target As...'), a 46K text file containing over five-thousand first names, begin by sorting it into alphabetical order. Then working out the alphabetical value for each name, multiply this value by its alphabetical position in the list to obtain a name score._
+
+_For example, when the list is sorted into alphabetical order, COLIN, which is worth 3 + 15 + 12 + 9 + 14 = 53, is the 938th name in the list. So, COLIN would obtain a score of 938 × 53 = 49714._
+
+_What is the total of all the name scores in the file?_
+
+#### solution
+
+871198282 in 216.833152ms
+
+#### explanation
+
+We start by reading content of given data file, and converting it into a string slice _( slice holding names )_. After that we'll go for a ascending sort of names. Now we need to calculate namescore of each name, following given rule. Finally we'll return sum of those scores.
+
 **More coming soon ...** :wink:

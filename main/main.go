@@ -48,7 +48,9 @@ func main() {
 		fmt.Printf("\n\tProblem 19 : %d in %v\n", projecteuler.CountingSundays(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 20 : %d in %v\n", projecteuler.FactorialDigitSum(100), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 21 : %d in %v\n", projecteuler.AmicableNumbers(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 21 : %d in %v\n", projecteuler.AmicableNumbers(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 22 : %d in %v\n", projecteuler.NamesScores(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
