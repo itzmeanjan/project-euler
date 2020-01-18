@@ -645,4 +645,24 @@ _What is the total of all the name scores in the file?_
 
 We start by reading content of given data file, and converting it into a string slice _( slice holding names )_. After that we'll go for a ascending sort of names. Now we need to calculate namescore of each name, following given rule. Finally we'll return sum of those scores.
 
+### [problem 23](./projecteuler/problem23.go)
+
+#### statement
+
+_A perfect number is a number for which the sum of its proper divisors is exactly equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, which means that 28 is a perfect number._
+
+_A number n is called deficient if the sum of its proper divisors is less than n and it is called abundant if this sum exceeds n._
+
+_As 12 is the smallest abundant number, 1 + 2 + 3 + 4 + 6 = 16, the smallest number that can be written as the sum of two abundant numbers is 24. By mathematical analysis, it can be shown that all integers greater than 28123 can be written as the sum of two abundant numbers. However, this upper limit cannot be reduced any further by analysis even though it is known that the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit._
+
+_Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers._
+
+#### solution
+
+4179871 in 17.033928895s
+
+#### explanation
+
+We'll start by creating a cache of abundant numbers < _28124_, which will be used for checking whether we can represent any +ve integer < _28124_, as a sum of two abudant numbers or not. Finally we'll return sum of those numbers which can't be written as sum of two abundant numbers.
+
 **More coming soon ...** :wink:
