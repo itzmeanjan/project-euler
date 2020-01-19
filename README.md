@@ -665,6 +665,31 @@ _Find the sum of all the positive integers which cannot be written as the sum of
 
 We'll start by creating a cache of abundant numbers < _28124_, which will be used for checking whether we can represent any +ve integer < _28124_, as a sum of two abudant numbers or not. Finally we'll return sum of those numbers which can't be written as sum of two abundant numbers.
 
+### [problem 24](./projecteuler/problem24.go)
+
+#### statement
+
+_A permutation is an ordered arrangement of objects. For example, 3124 is one possible permutation of the digits 1, 2, 3 and 4. If all of the permutations are listed numerically or alphabetically, we call it lexicographic order. The lexicographic permutations of 0, 1 and 2 are:_
+
+012   021   102   120   201   210
+
+_What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?_
+
+#### solution
+
+2783915460 in 50.254669ms
+
+#### explanation
+
+Generating next lexicographic permutation using Indian mathematician Narayana Pandita's [algorithm](https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order). Assuming we're given with a permutation of _n_-elements in a[n] array, now next lexicographic permutation can be found using following algorithm.
+
+- Find the largest index _i_ such that a[i] < a[i + 1]. If no such index exists, the permutation is the last permutation.
+- Find the largest index _j_ greater than _i_ such that a[i] < a[j].
+- Swap the value of a[i] with that of a[j].
+- Reverse the sequence from a[i + 1] up to and including the final element a[n-1]
+
+We'll keep generating next lexicographic permutation until we get to reach _10^6_-th permutation.
+
 ### [problem 25](./projecteuler/problem25.go)
 
 #### statement
