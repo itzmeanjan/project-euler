@@ -18,12 +18,6 @@ func namescore(name string) int {
 
 // sorts a given slice of strings in ascendic manner
 func sortNames(names []string) []string {
-	// utility function to swap value of two elements ( strings )
-	swap := func(a *string, b *string) {
-		tmp := *a
-		*a = *b
-		*b = tmp
-	}
 	for i := 0; i < len(names); i++ {
 		for j := 0; j < i; j++ {
 			if names[i] < names[j] {

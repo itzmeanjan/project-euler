@@ -665,4 +665,50 @@ _Find the sum of all the positive integers which cannot be written as the sum of
 
 We'll start by creating a cache of abundant numbers < _28124_, which will be used for checking whether we can represent any +ve integer < _28124_, as a sum of two abudant numbers or not. Finally we'll return sum of those numbers which can't be written as sum of two abundant numbers.
 
+### [problem 25](./projecteuler/problem25.go)
+
+#### statement
+
+_The Fibonacci sequence is defined by the recurrence relation:_
+
+_Fn = Fn−1 + Fn−2, where F1 = 1 and F2 = 1._
+
+_Hence the first 12 terms will be:_
+
+F1 = 1
+
+F2 = 1
+
+F3 = 2
+
+F4 = 3
+
+F5 = 5
+
+F6 = 8
+
+F7 = 13
+
+F8 = 21
+
+F9 = 34
+
+F10 = 55
+
+F11 = 89
+
+F12 = 144
+
+_The 12th term, F12, is the first term to contain three digits._
+
+_What is the index of the first term in the Fibonacci sequence to contain 1000 digits?_
+
+#### solution
+
+4782 in 63.3032ms
+
+#### explanation
+
+We'll keep generating fibonacci numbers, until we get first fibonacci term to have _1000_ digits, with help _"math/big"_ package. Index of that fibonacci term to be returned.
+
 **More coming soon ...** :wink:
