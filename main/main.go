@@ -55,9 +55,10 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 23 : %d in %v\n", projecteuler.NonAbundantSum(), time.Now().Sub(start))
 		start = time.Now()
+		fmt.Printf("\n\tProblem 24 : %s in %v\n", projecteuler.LexicographicPermutations(), time.Now().Sub(start))
+		start = time.Now()
 		fmt.Printf("\n\tProblem 25 : %d in %v\n", projecteuler.ThousandDigitFibNumber(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 24 : %s in %v\n", projecteuler.LexicographicPermutations(), time.Now().Sub(start))
-
+	fmt.Printf("\n\tProblem 27 : %d in %v\n", projecteuler.QuadraticPrimes(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
