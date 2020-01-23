@@ -788,6 +788,10 @@ _What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed
 
 #### explanation
 
-We'll start by calculating field values of sub-matrix of size _3 x 3_, centered at intersection of two diagonals of matrix. Center field of matrix is holding _1_. We'll keep calculating these field values, upto size <= _1001_, increasing size by 2 at each iteration. And finally, sum of all values present on two diagonals of matrix, to be returned.
+We'll start by calculating field values of sub-matrix of size _3 x 3_, centered at intersection of two diagonals of matrix. Center field of matrix is holding _1_. We'll keep calculating these field values, upto size <= _1001_, increasing size by 2 at each iteration. 
+
+![spiral_diagonal](spiral_diagonal.jpg)
+
+And finally, sum of all values present on two diagonals of matrix, to be returned.
 
 **More coming soon ...** :wink:
