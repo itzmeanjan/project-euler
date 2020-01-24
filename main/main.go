@@ -62,7 +62,9 @@ func main() {
 		fmt.Printf("\n\tProblem 27 : %d in %v\n", projecteuler.QuadraticPrimes(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 28 : %d in %v\n", projecteuler.NumberSpiralDiagonals(1001), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 29 : %d in %v\n", projecteuler.DistinctPowers(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 29 : %d in %v\n", projecteuler.DistinctPowers(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 30 : %d in %v\n", projecteuler.DigitFifthPowers(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
