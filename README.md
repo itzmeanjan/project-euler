@@ -3,7 +3,7 @@ Another implementation of Project Euler Problems :wink: #ProjectEuler100
 
 ## motivation
 
-I just came across one freecodecamp [post](https://www.freecodecamp.org/news/projecteuler100-coding-challenge-competitive-programming/), which tempted me to accept _#ProjectEuler100_ challenge. It's not like that prior to this I never thought of solving these beautiful mathematical problems, but I never opensourced it. So it's looks like a great opportunity to me, where I can challenge my thinking capability.
+I just came across one freecodecamp [post](https://www.freecodecamp.org/news/projecteuler100-coding-challenge-competitive-programming/), which tempted me to accept _#ProjectEuler100_ challenge. It's not like that prior to this I never thought of solving these beautiful mathematical problems, but I never opensourced it. So it looks like a great opportunity to me, where I can challenge my thinking and problem solving capability again.
 
 ## solutions
 
@@ -869,5 +869,26 @@ _How many different ways can £2 be made using any number of coins?_
 #### explanation
 
 We can make 3p using _{ 1p }_ coins, only in one possible way i.e. _{ 1p + 1p + 1p }_. But when given with _{ 1p, 2p }_ coins, we'll have one more possible way _{ 1p + 2p }_ of making 3p. Now our target it to count £2 _( = 200p )_ using _1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p)_ coins, where it's clearly visible that multiple subproblems are overlapping, and it also has an optimal substructure property. So we'll prefer dynamic programming to recursion, for counting possible number of ways. We'll use one single dimentational array of length `(targetV + 1)` = `201`, where we'll store possible number of ways for making all values from _0p_ to _200p_, using given coins.
+
+### [problem 32](./projecteuler/problem32.go)
+
+#### statement
+
+_We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital._
+
+_The product 7254 is unusual, as the identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital._
+
+_Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital._
+
+_HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum._
+
+#### solution
+
+45228 in 12.040034ms
+
+#### explanation
+
+We'll iterate over a range _(2-9999)_, and explore all possible products of them, so that we don't miss any possible _multiplicand/ multiplier/ product_ combination, for which pandigital criteria gets satisfied. Now we need to also consider one matter that some products can be obtained in multiple ways, so we'll simply choose to use hash map for storing products, so that we don't count any certain product more than ones. For reducing number of checks being performed, we'll only check those combinations which will have 9 digits total i.e. _( digitCount(multiplicand) + digitCount(multiplier) + digitCount(product) ) == 9_, cause we're checking pandigital products from 1 through 9.
+
 
 **More coming soon ...** :wink:
