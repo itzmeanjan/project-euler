@@ -848,4 +848,26 @@ _Find the sum of all the numbers that can be written as the sum of fifth powers 
 
 We'll start checking whether a certain number equals to sum of fifth power of their digits, from 10 and go upto 10^6, while keeping track of sum of numbers which are satisfying this criteria.
 
+### [problem 31](./projecteuler/problem31.go)
+
+#### statement
+
+_In the United Kingdom the currency is made up of pound (£) and pence (p). There are eight coins in general circulation:_
+
+_1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p)._
+
+_It is possible to make £2 in the following way:_
+
+_1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p_
+
+_How many different ways can £2 be made using any number of coins?_
+
+#### solution
+
+73682 in 3.532µs
+
+#### explanation
+
+We can make 3p using _{ 1p }_ coins, only in one possible way i.e. _{ 1p + 1p + 1p }_. But when given with _{ 1p, 2p }_ coins, we'll have one more possible way _{ 1p + 2p }_ of making 3p. Now our target it to count £2 _( = 200p )_ using _1p, 2p, 5p, 10p, 20p, 50p, £1 (100p), and £2 (200p)_ coins, where it's clearly visible that multiple subproblems are overlapping, and it also has an optimal substructure property. So we'll prefer dynamic programming to recursion, for counting possible number of ways. We'll use one single dimentational array of length `(targetV + 1)` = `201`, where we'll store possible number of ways for making all values from _0p_ to _200p_, using given coins.
+
 **More coming soon ...** :wink:
