@@ -70,7 +70,9 @@ func main() {
 		fmt.Printf("\n\tProblem 31 : %d in %v\n", projecteuler.CoinSum(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 32 : %d in %v\n", projecteuler.PandigitalProducts(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 33 : %d in %v\n", projecteuler.DigitCancellingFractions(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 33 : %d in %v\n", projecteuler.DigitCancellingFractions(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 34 : %d in %v\n", projecteuler.DigitFactorial(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

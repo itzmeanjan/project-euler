@@ -910,4 +910,22 @@ _If the product of these four fractions is given in its lowest common terms, fin
 
 First we'll generate all those fractions, having exactly two digits in both numerator & denominator, and not having _0_ as digit. In next step, we'll go for extracting curious fractions _( as per given definition )_. After that, we'll multiply those filtered out fractions, which will be represented in its lowest common terms. Finally we'll return denominator of fraction.
 
+### [problem 34](./projecteuler/problem34.go)
+
+#### statement
+
+_145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145._
+
+_Find the sum of all numbers which are equal to the sum of the factorial of their digits._
+
+_Note: as 1! = 1 and 2! = 2 are not sums they are not included._
+
+#### solution
+
+40730 in 13.280042ms
+
+#### explanation
+
+First we'll build a slice holding all digits _( 0 - 9 )_ of a given number, which will then be updated with each digits corresponding factorial values, _( which will stay precomputed in a buffer i.e. hash map )_. Then we'll sum up that slice and compare it with given number, if they are equal, it's curious number, which are searching for. We'll find all curious numbers, and sum them up. By the way, we've only two curious numbers _145_ & _40225_
+
 **More coming soon ...** :wink:
