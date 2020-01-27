@@ -928,4 +928,22 @@ _Note: as 1! = 1 and 2! = 2 are not sums they are not included._
 
 First we'll build a slice holding all digits _( 0 - 9 )_ of a given number, which will then be updated with each digits corresponding factorial values, _( which will stay precomputed in a buffer i.e. hash map )_. Then we'll sum up that slice and compare it with given number, if they are equal, it's curious number, which are searching for. We'll find all curious numbers, and sum them up. By the way, we've only two curious numbers _145_ & _40225_
 
+### [problem 35](./projecteuler/problem35.go)
+
+#### statement
+
+_The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime._
+
+_There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97._
+
+_How many circular primes are there below one million?_
+
+#### solution
+
+55 in 1.256801259s
+
+#### explanation
+
+We'll keep one hash map holding all primes explored yet, because while checking _13_, which is a prime, we also check its rotated form i.e. _31_, which is also prime, so 13 and 31 both are circular primes. But in some future iteration, if we go for checking 31 again, that'll result into recomputation of precomputed values, wasting computational resources. Finally length of prime holder hash map to be returned.
+
 **More coming soon ...** :wink:
