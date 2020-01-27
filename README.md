@@ -890,5 +890,24 @@ _HINT: Some products can be obtained in more than one way so be sure to only inc
 
 We'll iterate over a range _(2-9999)_, and explore all possible products of them, so that we don't miss any possible _multiplicand/ multiplier/ product_ combination, for which pandigital criteria gets satisfied. Now we need to also consider one matter that some products can be obtained in multiple ways, so we'll simply choose to use hash map for storing products, so that we don't count any certain product more than ones. For reducing number of checks being performed, we'll only check those combinations which will have 9 digits total i.e. _( digitCount(multiplicand) + digitCount(multiplier) + digitCount(product) ) == 9_, cause we're checking pandigital products from 1 through 9.
 
+### [problem 33](./projecteuler/problem33.go)
+
+#### statement
+
+_The fraction 49/98 is a curious fraction, as an inexperienced mathematician in attempting to simplify it may incorrectly believe that 49/98 = 4/8, which is correct, is obtained by cancelling the 9s._
+
+_We shall consider fractions like, 30/50 = 3/5, to be trivial examples._
+
+_There are exactly four non-trivial examples of this type of fraction, less than one in value, and containing two digits in the numerator and denominator._
+
+_If the product of these four fractions is given in its lowest common terms, find the value of the denominator._
+
+#### solution
+
+100 in 8.947783ms
+
+#### explanation
+
+First we'll generate all those fractions, having exactly two digits in both numerator & denominator, and not having _0_ as digit. In next step, we'll go for extracting curious fractions _( as per given definition )_. After that, we'll multiply those filtered out fractions, which will be represented in its lowest common terms. Finally we'll return denominator of fraction.
 
 **More coming soon ...** :wink:
