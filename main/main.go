@@ -76,7 +76,9 @@ func main() {
 		fmt.Printf("\n\tProblem 34 : %d in %v\n", projecteuler.DigitFactorial(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 35 : %d in %v\n", projecteuler.CircularPrimes(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 36 : %d in %v\n", projecteuler.DoubleBasePalindromes(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 36 : %d in %v\n", projecteuler.DoubleBasePalindromes(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 37 : %d in %v\n", projecteuler.TrunatablePrimes(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

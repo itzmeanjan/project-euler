@@ -964,4 +964,22 @@ _(Please note that the palindromic number, in either base, may not include leadi
 
 We check all numbers _from 2 to 10^6_, whether they are palindrome or not, of yes, then we convert it into binary, which is then checked for palindrome nature; else we go for next decimal number. Finally we return sum of all numbers, which are palindrome in both bases _( 2 & 10 )_.
 
+### [problem 37](./projecteuler/problem37.go)
+
+#### statement
+
+_The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3._
+
+_Find the sum of the only eleven primes that are both truncatable from left to right and right to left._
+
+_NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes._
+
+#### solution
+
+748317 in 583.690604ms
+
+#### explanation
+
+We'll start checking from _10_, and keep moving forward until we get to explore _11_ fully truncatable primes. For each given number, we'll first check whether number is left truncatable. If yes, we go for right truncatability check, else we say it's not fully truncatable. Finally sum of those 11 numbers to be returned.
+
 **More coming soon ...** :wink:
