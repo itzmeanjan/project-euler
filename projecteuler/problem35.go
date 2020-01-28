@@ -4,10 +4,10 @@ import "math"
 
 // given a slice of decimal digits (0-9)
 // returns an integer formed by those digits
-func numFromDigits(arr []int) int {
+func numFromDigits(arr []int, base int) int {
 	sum := 0
 	for i := 0; i < len(arr); i++ {
-		sum = sum*10 + arr[i]
+		sum = sum*base + arr[i]
 	}
 	return sum
 }
@@ -36,9 +36,9 @@ func isCircularPrime(num int) (bool, []int) {
 	circulated[0] = num
 	check := true
 	for i := 1; i < len(circulated); i++ {
-		rotateNumber(&splitted)                 // rotating number, for creating next value
-		circulated[i] = numFromDigits(splitted) // putting rotated number into buffer
-		if !isPrime(circulated[i]) {            // checking whether this form is prime or not, if not
+		rotateNumber(&splitted)                     // rotating number, for creating next value
+		circulated[i] = numFromDigits(splitted, 10) // putting rotated number into buffer
+		if !isPrime(circulated[i]) {                // checking whether this form is prime or not, if not
 			check = false // we simply quit looping, to reduce CPU cycle usage
 			break
 		}

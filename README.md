@@ -946,4 +946,22 @@ _How many circular primes are there below one million?_
 
 We'll keep one hash map holding all primes explored yet, because while checking _13_, which is a prime, we also check its rotated form i.e. _31_, which is also prime, so 13 and 31 both are circular primes. But in some future iteration, if we go for checking 31 again, that'll result into recomputation of precomputed values, wasting computational resources. Finally length of prime holder hash map to be returned.
 
+### [problem 36](./projecteuler/problem36.go)
+
+#### statement
+
+_The decimal number, 585 = 10010010012 (binary), is palindromic in both bases._
+
+_Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2._
+
+_(Please note that the palindromic number, in either base, may not include leading zeros.)_
+
+#### solution
+
+872187 in 26.343636ms
+
+#### explanation
+
+We check all numbers _from 2 to 10^6_, whether they are palindrome or not, of yes, then we convert it into binary, which is then checked for palindrome nature; else we go for next decimal number. Finally we return sum of all numbers, which are palindrome in both bases _( 2 & 10 )_.
+
 **More coming soon ...** :wink:
