@@ -1,7 +1,5 @@
 package projecteuler
 
-import "fmt"
-
 // given a slice of digits, holding a decimal number,
 // this function checks whether number is pandigital
 // from digit `frm` through digit `to`
