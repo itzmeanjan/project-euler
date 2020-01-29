@@ -1012,4 +1012,22 @@ We'll start from 2 and go upto 9876, for each number we'll keep it multiplying w
 
 Finally we'll return maximum 1 though 9 pandigital number, that can be obtained this way.
 
+### [problem 39](./projecteuler/problem39.go)
+
+#### statement
+
+_If p is the perimeter of a right angle triangle with integral length sides, {a,b,c}, there are exactly three solutions for p = 120._
+
+_{20,48,52}, {24,45,51}, {30,40,50}_
+
+_For which value of p ≤ 1000, is the number of solutions maximised?_
+
+#### solution
+
+![interger_right_triangle](./interger_right_triangle.jpg)
+
+#### explanation
+
+We need to ensure for some combination of _a, b, c_, `a + b + c == p && a^2 + b^2 == c^2` must be satisfied for that _a, b, c_ combination to be considered as valid. We'll try to find out how many number of ways we can form a right triangle, when `p` is given, by generating _a, b, c_. Our job is to find out maximum `p` _< 1001_, so that number of right triangles generated is maximum.
+
 **More coming soon ...** :wink:
