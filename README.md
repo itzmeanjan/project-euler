@@ -1030,4 +1030,26 @@ _For which value of p ≤ 1000, is the number of solutions maximised?_
 
 We need to ensure for some combination of _a, b, c_, `a + b + c == p && a^2 + b^2 == c^2` must be satisfied for that _a, b, c_ combination to be considered as valid. We'll try to find out how many number of ways we can form a right triangle, when `p` is given, by generating _a, b, c_. Our job is to find out maximum `p` _< 1001_, so that number of right triangles generated is maximum.
 
+### [problem 40](./projecteuler/problem40.go)
+
+#### statement
+
+_An irrational decimal fraction is created by concatenating the positive integers:_
+
+_0.123456789101112131415161718192021..._
+
+_It can be seen that the 12th digit of the fractional part is 1._
+
+_If dn represents the nth digit of the fractional part, find the value of the following expression._
+
+_d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000_
+
+#### solution
+
+210 in 11.470216ms
+
+#### explanation
+
+We'll not store all 10^6 digits in a slice, so that later we can compute required equation value by looking up values from slice positions, rather we'll choose one tricky way, in which only 1-5 digits ( at max ) will be kept at a time & `stopDigit` positions i.e. _1, 10, 100, 1000, 10000, 100000, 1000000_ will be kept track of, when close by we'll pick digit at corresponding `stopDigit` position in a hash map, which will be later used for generating result of given equation.
+
 **More coming soon ...** :wink:
