@@ -1052,4 +1052,20 @@ _d1 × d10 × d100 × d1000 × d10000 × d100000 × d1000000_
 
 We'll not store all 10^6 digits in a slice, so that later we can compute required equation value by looking up values from slice positions, rather we'll choose one tricky way, in which only 1-5 digits ( at max ) will be kept at a time & `stopDigit` positions i.e. _1, 10, 100, 1000, 10000, 100000, 1000000_ will be kept track of, when close by we'll pick digit at corresponding `stopDigit` position in a hash map, which will be later used for generating result of given equation.
 
+### [problem 41](./projecteuler/problem41.go)
+
+#### statement
+
+_We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once. For example, 2143 is a 4-digit pandigital and is also prime._
+
+_What is the largest n-digit pandigital prime that exists?_
+
+#### solution
+
+7652413 in 2m33.647939438s
+
+#### explanation
+
+We'll keep calculating maximum number that can be represented using `n`-digits, which is also pandigital & prime, in several go-routines. Each go-routine will report to listener. In hope of performing lesser number of computations, we'll start checking from _9999_ ( for 4 digit pandigital prime number ), and stop as soon as we find a single number satisfying both conditions, which is _4231_. Finally we'll return maximum `n`-digit pandigital prime number, it's pretty much understandable that maximum value of `n` can be _9_.
+
 **More coming soon ...** :wink:
