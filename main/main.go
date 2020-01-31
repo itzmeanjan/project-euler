@@ -86,7 +86,9 @@ func main() {
 		fmt.Printf("\n\tProblem 39 : %d in %v\n", projecteuler.IntegerRightTriangles(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 40 : %d in %v\n", projecteuler.ChampernownesConstant(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 41 : %d in %v\n", projecteuler.PandigitalPrime(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 41 : %d in %v\n", projecteuler.PandigitalPrime(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 42 : %d in %v\n", projecteuler.CodedTriangleNumber(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

@@ -1068,4 +1068,24 @@ _What is the largest n-digit pandigital prime that exists?_
 
 We'll keep calculating maximum number that can be represented using `n`-digits, which is also pandigital & prime, in several go-routines. Each go-routine will report to listener. In hope of performing lesser number of computations, we'll start checking from _9999_ ( for 4 digit pandigital prime number ), and stop as soon as we find a single number satisfying both conditions, which is _4231_. Finally we'll return maximum `n`-digit pandigital prime number, it's pretty much understandable that maximum value of `n` can be _9_.
 
+### [problem 42](./projecteuler/problem42.go)
+
+#### statement
+
+_The nth term of the sequence of triangle numbers is given by, tn = ½n(n+1); so the first ten triangle numbers are:_
+
+_1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ..._
+
+_By converting each letter in a word to a number corresponding to its alphabetical position and adding these values we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a triangle number then we shall call the word a triangle word._
+
+_Using [words.txt](./p042_words.txt) (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?_
+
+#### solution
+
+162 in 2.508198ms
+
+#### explanation
+
+We'll read given file content and obtain a slice of words, and each of them will be sent to one function for checking their triangle property. For each word, we'll compute its word value, and check whether that number is triangular or not. Finally number of triangle words to be returned.
+
 **More coming soon ...** :wink:
