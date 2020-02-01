@@ -1088,4 +1088,45 @@ _Using [words.txt](./p042_words.txt) (right click and 'Save Link/Target As...'),
 
 We'll read given file content and obtain a slice of words, and each of them will be sent to one function for checking their triangle property. For each word, we'll compute its word value, and check whether that number is triangular or not. Finally number of triangle words to be returned.
 
+### [problem 43](./projecteuler/problem43.go)
+
+#### statement
+
+_The number, 1406357289, is a 0 to 9 pandigital number because it is made up of each of the digits 0 to 9 in some order, but it also has a rather interesting sub-string divisibility property._
+
+_Let d1 be the 1st digit, d2 be the 2nd digit, and so on. In this way, we note the following:_
+
+d2d3d4=406 is divisible by 2
+
+d3d4d5=063 is divisible by 3
+
+d4d5d6=635 is divisible by 5
+
+d5d6d7=357 is divisible by 7
+
+d6d7d8=572 is divisible by 11
+
+d7d8d9=728 is divisible by 13
+
+d8d9d10=289 is divisible by 17
+
+_Find the sum of all 0 to 9 pandigital numbers with this property._
+
+#### solution
+
+16695334890 in 1.260754677s
+
+#### explanation
+
+We need to keep checking all 0-9 pandigital numbers, which are satisfying criteria given in above question. We can do either of two things :
+
+- Start with first 10 digit number, and keep checking all 10 digit numbers, whether they are 0-9 pandigital and satisfying above given criteria
+- Or start with smallest 10 digit number that is 0-9 pandigital, and keep generating lexicographic permutations until we get _0_ as first digit of permutation i.e. _[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]_, and in each pass, we'll check whether that number satifies above given criterias or not.
+
+Obviously second choice is better, as we're going to check lesser number and it's always guaranted that we're checking a number which is 0-9 pandigital i.e. we can simply skip pandigital check.
+
+Lets take an example, _102_, which is 0-2 pandigital, can only generate 0-2 pandigital permutations, when we generate next term using lexicographic permutation generation rule i.e. _120, 201, 210_. And next term generated is _012_, which is very first term and having 0 at beginning, so it's not really a 0-2 pandigital number, rather it's a 1-2 pandigital number. Which is why we're checking until we get first digit as _0_ in case of 0-9 pandigital numbers.
+
+Finally we'll add those 0-9 pandigital numbers, which are satisfying above given criteria.
+
 **More coming soon ...** :wink:

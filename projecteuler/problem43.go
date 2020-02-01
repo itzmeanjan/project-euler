@@ -1,6 +1,8 @@
 package projecteuler
 
-import "math"
+import (
+	"math"
+)
 
 // swaps two integers by their address
 func swapNum(a *int, b *int) {
@@ -101,6 +103,12 @@ func checkDivisibility(subs []int, primes []int) bool {
 // starting check from 1023456789, because that's smallest 0-9 pandigital number
 // which can be formed, while starting with 1 i.e. starting a number with 0,
 // doesn't really make sense
+//
+// and we'll keep generating lexicographic permutations, which are no doubt 0-9 pandigital
+// all we've to do is to groupify them as per specified rule and them their corresponding
+// divisibility, until first digit of permutation becomes 0
+//
+// sum of those pandigital numbers, satisfying this criteria, to be returned
 func SubStringDivisibility() int {
 	sum := 0
 	primes := getFirstXPrimes(7)
