@@ -1,24 +1,5 @@
 package projecteuler
 
-import (
-	"fmt"
-	"math"
-)
-
-type consequtiveNumbers struct {
-	a int
-	b int
-	c int
-	d int
-}
-
-func (con *consequtiveNumbers) next() {
-	con.a = con.b
-	con.b = con.c
-	con.c = con.d
-	con.d++
-}
-
 func primeFactorCount(num int, primes []int, factors *map[int]int) {
 	for i := 0; i < len(primes); i++ {
 		if num < primes[i] {
@@ -44,21 +25,42 @@ func primeFactorCount(num int, primes []int, factors *map[int]int) {
 	}
 }
 
-func validatePrimeFactors(num int, factors map[int]int) bool {
-	prod := 1
-	for k, v := range factors {
-		prod *= int(math.Pow(float64(k), float64(v)))
-	}
-	return num == prod
+type consequtiveNumbers struct {
+	a        int
+	factorsA map[int]int
+	b        int
+	factorsB map[int]int
+	c        int
+	factorsC map[int]int
+	d        int
+	factorsD map[int]int
+}
+
+func (con *consequtiveNumbers) next() {
+	con.a = con.b
+	con.factorsA = con.factorsB
+	con.b = con.c
+	con.factorsB = con.factorsC
+	con.c = con.d
+	con.factorsC = con.factorsD
+	con.d++
+	con.factorsD = make(map[int]int)
+}
+
+func (con consequtiveNumbers) primeCountCheck(primes []int, count int) bool {
+	primeFactorCount(con.d, primes, &con.factorsD)
+	return len(con.factorsA) == count && len(con.factorsA) == len(con.factorsB) && len(con.factorsB) == len(con.factorsC) && len(con.factorsC) == len(con.factorsD)
 }
 
 // DistinctPrimeFactors - ...
 func DistinctPrimeFactors() int {
-	factors := make(map[int]int)
-	primes := GeneratePrimesUnderX(17)
-	fmt.Println(primes)
-	primeFactorCount(17, primes, &factors)
-	fmt.Println(factors)
-	fmt.Println(validatePrimeFactors(17, factors))
-	return 0
+	cons := consequtiveNumbers{1, map[int]int{1: 1}, 2, map[int]int{2: 1}, 3, map[int]int{3: 1}, 4, map[int]int{2: 2}}
+	primes := GeneratePrimesUnderX(100)
+	for !cons.primeCountCheck(primes, 4) {
+		if tmp := primes[len(primes)-1]; cons.d > tmp {
+			generatePrimesAfterX(tmp, cons.d+1, &primes)
+		}
+		cons.next()
+	}
+	return cons.a
 }

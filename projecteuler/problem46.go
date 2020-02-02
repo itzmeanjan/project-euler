@@ -66,7 +66,7 @@ func GoldbachOtherConjecture() int {
 	buffer := GeneratePrimesUnderX(100) // first generating all primes under 100
 	for i := 35; ; i += 2 {             // incrementing by 2, to check only odd numbers
 		if tmp := buffer[len(buffer)-1]; i > tmp {
-			generatePrimesAfterX(tmp, tmp+(i-tmp+1), &buffer) // generating some next primes, otherwise function fails
+			generatePrimesAfterX(tmp, i+1, &buffer) // generating some next primes, otherwise function fails
 			// to check whether next odd number is really satisfying goldbach conjecture or not
 		}
 		if !validateGoldbachConjecture(i, buffer) { // if doesn't satisfy, we've obtained our target number
