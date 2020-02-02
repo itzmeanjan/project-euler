@@ -1179,4 +1179,35 @@ _Find the next triangle number that is also pentagonal and hexagonal._
 We'll keep computing next triangular number _( starting from 286-th triangular number )_
 , until we find one which is pentagonal and hexagonal too.
 
+### [problem 46](./projecteuler/problem46.go)
+
+#### statement
+
+_It was proposed by Christian Goldbach that every odd composite number can be written as the sum of a prime and twice a square._
+
+9 = 7 + 2×1^2
+
+15 = 7 + 2×2^2
+
+21 = 3 + 2×3^2
+
+25 = 7 + 2×3^2
+
+27 = 19 + 2×2^2
+
+33 = 31 + 2×1^2
+
+_It turns out that the conjecture was false._
+
+_What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?_
+
+#### solution
+
+5777 in 7.999267ms
+
+#### explanation
+
+We'll keep a buffer of primes, which will be first filled up, by generating all primes under _100_. Now we'll start checking from 35 and keep checking all odd numbers, until we find one which doesn't satisfy Goldbach's Conjecture. To avoid huge recomputation of primes, we'll keep modifying that same slice of primes whenever we run out of sufficient number of primes.
+
+
 **More coming soon ...** :wink:

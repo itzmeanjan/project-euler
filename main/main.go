@@ -94,7 +94,9 @@ func main() {
 		fmt.Printf("\n\tProblem 43 : %d in %v\n", projecteuler.SubStringDivisibility(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 44 : %d in %v\n", projecteuler.PentagonalNumbers(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 45 : %d in %v\n", projecteuler.TriangularPentagonalHexagonal(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 45 : %d in %v\n", projecteuler.TriangularPentagonalHexagonal(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 46 : %d in %v\n", projecteuler.GoldbachOtherConjecture(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
