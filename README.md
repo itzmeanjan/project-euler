@@ -1236,4 +1236,20 @@ _Find the first four consecutive integers to have four distinct prime factors ea
 
 We'll start with _1, 2, 3, 4_, for each of them we'll find their unique prime factors and keep it in cache, if for each of them unique prime factor count satisfies given `count` value, then we've obtained our solution. Until we find such a solution we'll keep exploring next combinations. Now for avoiding huge recomputation of primes, we'll no doubt cache them and use it in successive computations. Another thing to be noticed, if we explore _1, 2, 3, 4_, in next iteration we'll explore _2, 3, 4, 5_ and next to that _3, 4, 5, 6_ i.e. in each iteration we need to only compute a single element's prime factors, others are precompted, which saves a lot of CPU cycles.
 
+### [problem 48](./projecteuler/problem48.go)
+
+#### statement
+
+_The series, 1^1 + 2^2 + 3^3 + ... + 10^10 = 10405071317._
+
+_Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000._
+
+#### solution
+
+9110846700 in 6.437555ms
+
+#### explanation
+
+Using help of _"math/big"_ of golang, we'll keep computing power of x^x & summing them up in an accumulator, as long as _x <= 1000_. Finally returned last 10 digits of sum of series.
+
 **More coming soon ...** :wink:
