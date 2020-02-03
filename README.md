@@ -1209,5 +1209,31 @@ _What is the smallest odd composite that cannot be written as the sum of a prime
 
 We'll keep a buffer of primes, which will be first filled up, by generating all primes under _100_. Now we'll start checking from 35 and keep checking all odd numbers, until we find one which doesn't satisfy Goldbach's Conjecture. To avoid huge recomputation of primes, we'll keep modifying that same slice of primes whenever we run out of sufficient number of primes.
 
+### [problem 47](./projecteuler/problem47.go)
+
+#### statement
+
+_The first two consecutive numbers to have two distinct prime factors are:_
+
+14 = 2 × 7
+15 = 3 × 5
+
+_The first three consecutive numbers to have three distinct prime factors are:_
+
+644 = 2² × 7 × 23
+
+645 = 3 × 5 × 43
+
+646 = 2 × 17 × 19.
+
+_Find the first four consecutive integers to have four distinct prime factors each. What is the first of these numbers?_
+
+#### solution
+
+134043 in 2.836098132s
+
+#### explanation
+
+We'll start with _1, 2, 3, 4_, for each of them we'll find their unique prime factors and keep it in cache, if for each of them unique prime factor count satisfies given `count` value, then we've obtained our solution. Until we find such a solution we'll keep exploring next combinations. Now for avoiding huge recomputation of primes, we'll no doubt cache them and use it in successive computations. Another thing to be noticed, if we explore _1, 2, 3, 4_, in next iteration we'll explore _2, 3, 4, 5_ and next to that _3, 4, 5, 6_ i.e. in each iteration we need to only compute a single element's prime factors, others are precompted, which saves a lot of CPU cycles.
 
 **More coming soon ...** :wink:
