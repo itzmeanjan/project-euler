@@ -102,7 +102,9 @@ func main() {
 		fmt.Printf("\n\tProblem 47 : %d in %v\n", projecteuler.DistinctPrimeFactors(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 48 : %s in %v\n", projecteuler.SelfPowers(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 49 : %d in %v\n", projecteuler.PrimePermutations(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 49 : %d in %v\n", projecteuler.PrimePermutations(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 50 : %d in %v\n", projecteuler.ConsecutivePrimeSum(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
