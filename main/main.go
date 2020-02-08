@@ -100,7 +100,9 @@ func main() {
 		fmt.Printf("\n\tProblem 46 : %d in %v\n", projecteuler.GoldbachOtherConjecture(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 47 : %d in %v\n", projecteuler.DistinctPrimeFactors(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 48 : %s in %v\n", projecteuler.SelfPowers(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 48 : %s in %v\n", projecteuler.SelfPowers(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 49 : %d in %v\n", projecteuler.PrimePermutations(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
