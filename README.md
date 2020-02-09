@@ -1252,6 +1252,28 @@ _Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000._
 
 Using help of _"math/big"_ of golang, we'll keep computing power of x^x & summing them up in an accumulator, as long as _x <= 1000_. Finally returned last 10 digits of sum of series.
 
+### [problem 49](./projecteuler/problem49.go)
+
+#### statement
+
+_The arithmetic sequence, 1487, 4817, 8147, in which each of the terms increases by 3330, is unusual in two ways:_
+
+(i) each of the three terms are prime, and, 
+
+(ii) each of the 4-digit numbers are permutations of one another.
+
+_There are no arithmetic sequences made up of three 1-, 2-, or 3-digit primes, exhibiting this property, but there is one other 4-digit increasing sequence._
+
+_What 12-digit number do you form by concatenating the three terms in this sequence?_
+
+#### solution
+
+296962999629 in 2m44.957077262s
+
+#### explanation
+
+First we'll generate all primes having four digits, now we'll keep choosing three primes _( from that set )_ in all possible ways. And each of them to validated against criterias given in question, if it satisfies so & other than _{ 1487, 4817, 8147 }_, then we've obtained our desired solution. Because it's already given that we've only two sequence such that.
+
 ### [problem 50](./projecteuler/problem50.go)
 
 #### statement
