@@ -1252,4 +1252,28 @@ _Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000._
 
 Using help of _"math/big"_ of golang, we'll keep computing power of x^x & summing them up in an accumulator, as long as _x <= 1000_. Finally returned last 10 digits of sum of series.
 
+### [problem 50](./projecteuler/problem50.go)
+
+#### statement
+
+_The prime 41, can be written as the sum of six consecutive primes:_
+
+41 = 2 + 3 + 5 + 7 + 11 + 13
+
+_This is the longest sum of consecutive primes that adds to a prime below one-hundred._
+
+_The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953._
+
+_Which prime, below one-million, can be written as the sum of the most consecutive primes?_
+
+#### solution
+
+997651 in 7.538766769s
+
+#### explanation
+
+First we'll generate all primes under 10^6, and keep them in a given slice. Now we'll compute sum of those primes. Our objective is to find out longest consecutive prime sequence, which has sum _< 10^6_. So we need two pointers, one pointing at beginning of sequence _( i.e. starting index of sequence under consideration )_ & another pointing at end of sequence, which is to be modified by inner loop index. And front index gets controlled by outer loop. For avoiding huge recomputation of primes, we'll cache previous iteration's sum, and substract last term of previous sequence, to get sum of current sequence, which is simply one lesser than previous iterations last index.
+
+![consecutive_prime_sum](./consecutive_prime_sum.jpg)
+
 **More coming soon ...** :wink:
