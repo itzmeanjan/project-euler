@@ -143,7 +143,7 @@ func generateAllXDigitsPrimes(x int) []int {
 	buffer := make([]int, 0)
 	f1 := firstNDigitNumber(x) + 1
 	l1 := lastNDigitNumber(x) + 1
-	for i := f1; i < l1; i += 2 {
+	for i := f1; i < l1; i++ {
 		if isPrime(i) {
 			buffer = append(buffer, i)
 		}

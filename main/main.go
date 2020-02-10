@@ -59,6 +59,8 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 25 : %d in %v\n", projecteuler.ThousandDigitFibNumber(), time.Now().Sub(start))
 		start = time.Now()
+		fmt.Printf("\n\tProblem 26 : %d in %v\n", projecteuler.ReciprocalCycle(), time.Now().Sub(start))
+		start = time.Now()
 		fmt.Printf("\n\tProblem 27 : %d in %v\n", projecteuler.QuadraticPrimes(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 28 : %d in %v\n", projecteuler.NumberSpiralDiagonals(1001), time.Now().Sub(start))
@@ -107,6 +109,6 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 50 : %d in %v\n", projecteuler.ConsecutivePrimeSum(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 26 : %d in %v\n", projecteuler.ReciprocalCycle(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 51 : %d in %v\n", projecteuler.PrimeDigitReplacements(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
