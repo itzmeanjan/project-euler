@@ -1332,4 +1332,28 @@ _Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contai
 
 We'll keep exploring _( starting with 1 )_ until we get one such number, which is when multplied with each of _{2, 3, 4, 5, 6}_, will be permutation of same digits
 
+### [problem 53](./projecteuler/problem53.go)
+
+#### statement
+
+_There are exactly ten ways of selecting three from five, 12345:_
+
+_123, 124, 125, 134, 135, 145, 234, 235, 245, and 345_
+
+_In combinatorics, we use the notation, (5C3)=10_
+
+_In general, (nr)=n!r!(n−r)!, where r≤n, n!=n×(n−1)×...×3×2×1, and 0!=1_
+
+_It is not until n=23, that a value exceeds one-million: (23C10)=1144066_
+
+_How many, not necessarily distinct, values of (nCr) for 1≤n≤100, are greater than one-million?_
+
+#### solution
+
+4075 in 60.199108ms
+
+#### explanation
+
+We're going to leverage caching mechanism heavily, for choosing _r_ many elements from _n_ many elements, where _1 <= r <= n_, by building pascal triangle only once for a certain _n_. And we'll keep track of how many of those choice counts are _>10^6_, which will be returned.
+
 **More coming soon ...** :wink:
