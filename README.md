@@ -1316,4 +1316,20 @@ _Find the smallest prime which, by replacing part of the number (not necessarily
 
 We'll keep generating primes of certain length, starting from 2. For each of them, we'll try to replace _1 to len(prime)-1_, number of digits by _0-9_, which will eventually generate _<= 10_ new numbers _( at min 9 )_. Now we'll check whether this series is having `x` number of primes or not. If yes, we'll return starting number of this prime series, else we'll go for exploring another prime.
 
+### [problem 52](./projecteuler/problem52.go)
+
+#### statement
+
+_It can be seen that the number, 125874, and its double, 251748, contain exactly the same digits, but in a different order._
+
+_Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits._
+
+#### solution
+
+142857 in 206.462802ms
+
+#### explanation
+
+We'll keep exploring _( starting with 1 )_ until we get one such number, which is when multplied with each of _{2, 3, 4, 5, 6}_, will be permutation of same digits
+
 **More coming soon ...** :wink:
