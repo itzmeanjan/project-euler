@@ -1,6 +1,8 @@
 package projecteuler
 
-import "math"
+import (
+	"math"
+)
 
 // given a set of numbers, extracts only those which are prime
 func getPrimesOnly(num []int) []int {
@@ -13,6 +15,18 @@ func getPrimesOnly(num []int) []int {
 	return buffer
 }
 
+// given a number as a slice i.e. digits are
+// splitted & put as an element of slice
+// e.g. 123 will be kept as []int{1, 2, 3}
+// and another slice of positions to be supplied,
+// length of which is <= length of `num` slice
+//
+// all we've to do is replace all those indices
+// given in `pos` slice, with digits from 0-9
+// so if num = []int{1, 2, 3} & pos = []int{0}
+// then generated numbers []int{123, 223,
+// 323, 423, 523, 623, 723, 823, 923}, but 023 = 23 not be
+// considered, because it's not 3 digit anymore
 func replaceXDigitsBy0_9(pos []int, num []int) []int {
 	buffer := make([]int, 0)
 	for i := 0; i <= 9; i++ {
@@ -27,6 +41,11 @@ func replaceXDigitsBy0_9(pos []int, num []int) []int {
 	return buffer
 }
 
+// given a set of numbers, all we've to do
+// is to choose all those instances of given length
+// from that set
+// if []int{1, 2, 3} is given, and asked to choose all unordered subsets
+// of length 2, then []int{[]int{1, 2}, []int{1, 3}, []int{2, 3}} - choices we can make
 func getPossibleChoices(frm []int, chooseX int) [][]int {
 	choices := binomialCoeff(len(frm), chooseX)
 	buffer := make([][]int, choices)
@@ -41,6 +60,10 @@ func getPossibleChoices(frm []int, chooseX int) [][]int {
 	return buffer
 }
 
+// given a prime number ( `num` ), and `x` as number of primes
+// we want to generate by replacing some indices of `num`
+// with 0-9, we'll find starting value of that series
+// i.e. minimum value of prime series with length `x`
 func getSmallestPrimeFromXPrimeFamily(num int, x int) int {
 	base := make([]int, int(math.Floor(math.Log10(float64(num))))+1)
 	for i := range base {
@@ -59,15 +82,20 @@ func getSmallestPrimeFromXPrimeFamily(num int, x int) int {
 			break
 		}
 	}
-	return initP
+	return initP // returns 0, if found nothing
 }
 
-// PrimeDigitReplacements - ...
-func PrimeDigitReplacements() int {
+// PrimeDigitReplacements - Replaces digits of prime numbers
+// with 0-9 and generates prime numbers of same length as of
+// that primary prime number. We'll try to find out such a
+// series of primes, of length `x`, and return minimum
+// number of that series
+// x = 8, here
+func PrimeDigitReplacements(x int) int {
 	smallestP := 0
 	for i := 2; ; i++ {
 		for _, p := range generateAllXDigitsPrimes(i) {
-			if v := getSmallestPrimeFromXPrimeFamily(p, 8); v != 0 {
+			if v := getSmallestPrimeFromXPrimeFamily(p, x); v != 0 {
 				smallestP = v
 				break
 			}

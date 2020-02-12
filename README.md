@@ -1298,4 +1298,22 @@ First we'll generate all primes under 10^6, and keep them in a given slice. Now 
 
 ![consecutive_prime_sum](./consecutive_prime_sum.jpg)
 
+### [problem 51](./projecteuler/problem51.go)
+
+#### statement
+
+_By replacing the 1st digit of the 2-digit number *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime._
+
+_By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property._
+
+_Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family._
+
+#### solution
+
+121313 in 4.654042749s
+
+#### explanation
+
+We'll keep generating primes of certain length, starting from 2. For each of them, we'll try to replace _1 to len(prime)-1_, number of digits by _0-9_, which will eventually generate _<= 10_ new numbers _( at min 9 )_. Now we'll check whether this series is having `x` number of primes or not. If yes, we'll return starting number of this prime series, else we'll go for exploring another prime.
+
 **More coming soon ...** :wink:
