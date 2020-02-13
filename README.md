@@ -1356,4 +1356,36 @@ _How many, not necessarily distinct, values of (nCr) for 1≤n≤100, are greate
 
 We're going to leverage caching mechanism heavily, for choosing _r_ many elements from _n_ many elements, where _1 <= r <= n_, by building pascal triangle only once for a certain _n_. And we'll keep track of how many of those choice counts are _>10^6_, which will be returned.
 
+### [problem 55](./projecteuler/problem55.go)
+
+#### statement
+
+_If we take 47, reverse and add, 47 + 74 = 121, which is palindromic._
+
+_Not all numbers produce palindromes so quickly. For example,_
+
+349 + 943 = 1292
+
+1292 + 2921 = 4213
+
+4213 + 3124 = 7337
+
+_That is, 349 took three iterations to arrive at a palindrome._
+
+_Although no one has proved it yet, it is thought that some numbers, like 196, never produce a palindrome. A number that never forms a palindrome through the reverse and add process is called a Lychrel number. Due to the theoretical nature of these numbers, and for the purpose of this problem, we shall assume that a number is Lychrel until proven otherwise. In addition you are given that for every number below ten-thousand, it will either (i) become a palindrome in less than fifty iterations, or, (ii) no one, with all the computing power that exists, has managed so far to map it to a palindrome. In fact, 10677 is the first number to be shown to require over fifty iterations before producing a palindrome: 4668731596684224866951378664 (53 iterations, 28-digits)._
+
+_Surprisingly, there are palindromic numbers that are themselves Lychrel numbers; the first example is 4994._
+
+_How many Lychrel numbers are there below ten-thousand?_
+
+_NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers._
+
+#### solution
+
+249 in 143.031404ms
+
+#### explanation
+
+While leveraging power of multicore CPU using go-routines, we'll parallelly compute how many numbers are lychrel under 10K. Thanks to `math/big` for handling big numbers efficiently. 
+
 **More coming soon ...** :wink:
