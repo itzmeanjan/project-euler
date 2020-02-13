@@ -114,7 +114,9 @@ func main() {
 		fmt.Printf("\n\tProblem 52 : %d in %v\n", projecteuler.PermutedMultiples(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 53 : %d in %v\n", projecteuler.CombinatorialSelection(), time.Now().Sub(start))
+		start = time.Now()
+		fmt.Printf("\n\tProblem 55 : %d in %v\n", projecteuler.LychrelNumbers(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 55 : %d in %v\n", projecteuler.LychrelNumbers(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 56 : %d in %v\n", projecteuler.PowerfulDigitSum(), time.Now().Sub(start))
 	fmt.Println("Done")
 }

@@ -1386,6 +1386,22 @@ _NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretic
 
 #### explanation
 
-While leveraging power of multicore CPU using go-routines, we'll parallelly compute how many numbers are lychrel under 10K. Thanks to `math/big` for handling big numbers efficiently. 
+While leveraging power of multicore CPU using go-routines, we'll parallelly compute how many numbers are lychrel under 10K. Thanks to `math/big` for handling big numbers efficiently.
+
+### [problem 56](./projecteuler/problem56.go)
+
+#### statement
+
+_A googol (10^100) is a massive number: one followed by one-hundred zeros; 100^100 is almost unimaginably large: one followed by two-hundred zeros. Despite their size, the sum of the digits in each number is only 1._
+
+_Considering natural numbers of the form, a^b, where a, b < 100, what is the maximum digital sum?_
+
+#### solution
+
+972 in 26.468845ms
+
+#### explanation
+
+Iteratively computes maximum sum of digits of natural number of form _a^b where a, b < 100_.
 
 **More coming soon ...** :wink:
