@@ -1404,4 +1404,40 @@ _Considering natural numbers of the form, a^b, where a, b < 100, what is the max
 
 Iteratively computes maximum sum of digits of natural number of form _a^b where a, b < 100_.
 
+### [problem 57](./projecteuler/problem57.go)
+
+#### statement
+
+_It is possible to show that the square root of two can be expressed as an infinite continued fraction._
+
+√2 = 1+1/(2+1/(2+1/2+…
+
+_By expanding this for the first four iterations, we get:_
+
+1+1/2=3/2=1.5
+
+1+1/(2+1/2)=7/5=1.4
+
+1+1/(2+1/(2+1/2))=17/12=1.41666…
+
+1+1/(2+1/(2+1/(2+1/2)))=41/29=1.41379…
+
+
+
+_The next three expansions are 9970, 239169, and 577408, but the eighth expansion, 1393985, is the first example where the number of digits in the numerator exceeds the number of digits in the denominator._
+
+_In the first one-thousand expansions, how many fractions contain a numerator with more digits than the denominator_
+
+#### solution
+
+153 in 10.379267ms
+
+#### explanation
+
+We can find a clear pattern in calculating next expanded form of √2, given intial form
+
+_p / q = (num(i-1)+ den(i-1)*2) / (num(i-1) + den(i-1))_
+
+Now it's very easy to count how many of these fractions having more digits in numerator than in denominator.
+
 **More coming soon ...** :wink:
