@@ -1440,4 +1440,36 @@ _p / q = (num(i-1)+ den(i-1)*2) / (num(i-1) + den(i-1))_
 
 Now it's very easy to count how many of these fractions having more digits in numerator than in denominator.
 
+### [problem 58](./projecteuler/problem58.go)
+
+#### statement
+
+_Starting with 1 and spiralling anticlockwise in the following way, a square spiral with side length 7 is formed._
+
+37 36 35 34 33 32 31
+
+38 17 16 15 14 13 30
+
+39 18  5  4  3 12 29
+
+40 19  6  1  2 11 28
+
+41 20  7  8  9 10 27
+
+42 21 22 23 24 25 26
+
+43 44 45 46 47 48 49
+
+_It is interesting to note that the odd squares lie along the bottom right diagonal, but what is more interesting is that 8 out of the 13 numbers lying along both diagonals are prime; that is, a ratio of 8/13 ≈ 62%._
+
+_If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If this process is continued, what is the side length of the square spiral for which the ratio of primes along both diagonals first falls below 10%?_
+
+#### solution
+
+26241 in 1.652747178s
+
+#### explanation
+
+We'll generate only diagonal elements of square matrix of certain order _( i.e. 1x1, 3x3, 5x5 ... )_ in clockwise spiral fashion. And we'll keep doing that thing until we get a prime ratio _< 10%_. Now in each iteration we need to check how many of these diagonal elements are prime, to avoid checking all diagonal elements in each iteration, we'll cache prime count of previous iteration and only check newly generated four corner items. For reduing space complexity, we'll store only 4 corner elements of square matrix, in each iteration.
+
 **More coming soon ...** :wink:
