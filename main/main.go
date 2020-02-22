@@ -115,6 +115,8 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 53 : %d in %v\n", projecteuler.CombinatorialSelection(), time.Now().Sub(start))
 		start = time.Now()
+		fmt.Printf("\n\tProblem 54 : %d in %v\n", projecteuler.PokerHands(), time.Now().Sub(start))
+		start = time.Now()
 		fmt.Printf("\n\tProblem 55 : %d in %v\n", projecteuler.LychrelNumbers(), time.Now().Sub(start))
 		start = time.Now()
 		fmt.Printf("\n\tProblem 56 : %d in %v\n", projecteuler.PowerfulDigitSum(), time.Now().Sub(start))
@@ -123,6 +125,6 @@ func main() {
 		start = time.Now()
 		fmt.Printf("\n\tProblem 58 : %d in %v\n", projecteuler.SpiralPrimes(), time.Now().Sub(start))
 	*/
-	fmt.Printf("\n\tProblem 54 : %d in %v\n", projecteuler.PokerHands(), time.Now().Sub(start))
+	fmt.Printf("\n\tProblem 60 : %d in %v\n", projecteuler.PrimePairSets(), time.Now().Sub(start))
 	fmt.Println("Done")
 }
