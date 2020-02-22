@@ -161,10 +161,6 @@ func (h hand) getRank() int {
 	}
 	if three, pair := h.getFullHouse(); three != 0 && pair != 0 {
 		return 7
-	} else if three != 0 {
-		return 4
-	} else if pair != 0 {
-		return 2
 	}
 	if h.isFlush() {
 		return 6
@@ -172,8 +168,14 @@ func (h hand) getRank() int {
 	if h.isStraight() {
 		return 5
 	}
+	if h.getThreeOfAKind() != 0 {
+		return 4
+	}
 	if h.getTwoPairs() != nil {
 		return 3
+	}
+	if h.getOnePair() != 0 {
+		return 2
 	}
 	return 1
 }
@@ -239,6 +241,8 @@ func tieBreaker(h1 hand, h2 hand, rank int) int {
 	switch rank {
 	case 1:
 		fallthrough
+	case 3:
+		fallthrough
 	case 5:
 		fallthrough
 	case 6:
@@ -253,22 +257,6 @@ func tieBreaker(h1 hand, h2 hand, rank int) int {
 		} else if tmp1 < tmp2 {
 			winner = 2
 		} else {
-			winner = determineWinnerwrtHighCard(h1, h2)
-		}
-	case 3:
-		tmp1, tmp2 := h1.getTwoPairs(), h2.getTwoPairs()
-		for i := 1; i >= 0; i-- {
-			if tmp1[i] == tmp2[i] {
-				continue
-			}
-			if tmp1[i] > tmp2[i] {
-				winner = 1
-			} else {
-				winner = 2
-			}
-			break
-		}
-		if winner == 0 {
 			winner = determineWinnerwrtHighCard(h1, h2)
 		}
 	case 4:
